@@ -1,0 +1,71 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation"
+		style="background-color: #4c539b;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+
+				</button>
+				<a class="navbar-brand" href="#">Project name</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+
+					<li><a href="#"><h:graphicImage name="images/nature1.jpg"
+								id="nature1" style="height: 20px; width: 20px"
+								styleClass="img-rounded" /> Profile</a></li>
+					<li><a href="#"> <i class="glyphicon glyphicon-home"></i>
+							Home
+					</a></li>
+					<li><a href="#">Settings</a></li>
+
+					<li><a href="#">Help</a></li>
+					<li><p:link id="dynaButton" value="Setting" type="button" class="glyphicon glyphicon-cog" /></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-left">
+
+
+					<li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-envelope"></i></a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-globe"></i></a></li>
+					
+
+				</ul>
+
+
+				<h:form class="navbar-form navbar-left">
+					<p:growl id="messages" showDetail="false" />
+					<p:menu overlay="true" trigger="dynaButton" my="left bottom"
+						at="left bottom">
+						<p:submenu label="Ajax">
+							<p:menuitem value="Save" update="messages" icon="ui-icon-disk" />
+							<p:menuitem value="Update" update="messages"
+								icon="ui-icon-arrowrefresh-1-w" />
+						</p:submenu>
+						<p:submenu label="Non-Ajax">
+							<p:menuitem value="logout" update="messages" ajax="false"
+								icon="ui-icon-close" actionListener="#{userLogin.logout()}" />
+						</p:submenu>
+						<p:submenu label="Navigations">
+							<p:menuitem value="External" url="http://www.primefaces.org"
+								icon="ui-icon-home" />
+
+						</p:submenu>
+					</p:menu>
+				</h:form>
+				<form class="navbar-form navbar-left">
+
+					<input type="text" class="form-control" placeholder="Search..." />
+				</form>
+			</div>
+		</div>
+	</div>
+</ui:composition>
+

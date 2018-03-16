@@ -1,0 +1,66 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/default/main.xhtml">
+	<h:head>
+		<title>home</title>
+
+		<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+
+
+	</h:head>
+	<ui:define name="content">
+		<!-- <h1 class="page-header ">
+			<i class="fa fa-tachometer"></i> Dashboard
+		</h1> -->
+
+		<h:body>
+			<h:form id="form" class="form-horizontal">
+				<div class="form-group">
+					<div class="col-sm-2"></div>
+					<h2 style="text-align: center" class="col-sm-4">Edit Your
+						Record</h2>
+				</div>
+				<hr />
+				<div class="form-group">
+					<h:outputLabel for="username" class="control-label col-sm-2">User Name</h:outputLabel>
+					<div class="col-sm-4">
+						<h:inputText id="name-id" class="form-control" />
+
+						<!-- <p:graphicImage value="resources/images/nature1.jpg" /> -->
+						<!-- <p:column>
+							<h:graphicImage name="images/nature1.jpg" id="nature1"
+								style="height: 77px; width: 100px" styleClass="img-circle" />
+						</p:column> -->
+					</div>
+
+				</div>
+				<p:commandButton value="chat" type="button"
+					onclick="PF('dlg3').show();" />
+				<p:dialog header="Effects" widgetVar="dlg3" showEffect="explode"
+					footer=" chat" hideEffect="bounce" height="200"
+					position="right bottom">
+
+					<p:outputPanel deferred="false" style="height:250px;" >
+						
+						<p align="left">Lorem ipsum dolor sit amet...</p>
+						<p align="right">Lorem ipsum dolor sit amet...</p>
+						<p align="left">Lorem ipsum dolor sit amet...</p>
+						<p align="right">Lorem ipsum dolor sit amet...</p>
+						<p align="right">Lorem ipsum dolor sit amet...</p>
+						
+					</p:outputPanel>
+					<p:inputTextarea rows="3" cols="30" autoResize="false" placeholder="type here .." value="#{chat.message}"  />
+					<p:commandButton value="send"></p:commandButton>
+				</p:dialog>
+			</h:form>
+		</h:body>
+	</ui:define>
+</ui:composition>
+
+
+
+
+
